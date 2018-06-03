@@ -1,21 +1,14 @@
-/*
- * Node.h
- *
- *  Created on: Mar 19, 2017
- *      Author: patrick
- */
+#ifndef NODE_HPP_
+#define NODE_HPP_
 
-#ifndef PATHFINDER_NODE_H_
-#define PATHFINDER_NODE_H_
-
-class Node
+class NODE
 {
 	//################################################
 
 	// -- ATTRIBUTES
 
   private:
-	int RemainingCost = 0;
+	double RemainingCost = 0;
 	int MovementCost = 0;
 
 	int PreviousNodeIndex = 0;
@@ -26,23 +19,23 @@ class Node
 	// -- INITIALIZATION
 
   public:
-	Node()
+	NODE()
 	{
 	}
 
-	Node(const int index, const int remaining_cost)
+	NODE(const int index, const double remaining_cost)
 	{
 		NodeIndex = index;
 		RemainingCost = remaining_cost;
 	}
 
-	Node(const Node &node)
+	NODE(const NODE &node)
 	{
 		NodeIndex = node.NodeIndex;
 		RemainingCost = node.RemainingCost;
 	}
 
-	virtual ~Node()
+	virtual ~NODE()
 	{
 	}
 
@@ -51,7 +44,7 @@ class Node
 	// -- INQUIRIES
 
   public:
-	int GetRemainingCost() const
+	double GetRemainingCost() const
 	{
 		return RemainingCost;
 	}
@@ -61,7 +54,7 @@ class Node
 		return MovementCost;
 	}
 
-	int GetTotalCost() const
+	double GetTotalCost() const
 	{
 		return MovementCost + RemainingCost;
 	}
@@ -81,11 +74,11 @@ class Node
 	// -- OPERATIONS
 
   public:
-	void SetPreviousNode(int previousNodeIndex, int newMovementCost)
+	void SetPreviousNode(int previous_node_index, int new_movement_cost)
 	{
-		PreviousNodeIndex = previousNodeIndex;
-		MovementCost = newMovementCost;
+		PreviousNodeIndex = previous_node_index;
+		MovementCost = new_movement_cost;
 	}
 };
 
-#endif /* PATHFINDER_NODE_H_ */
+#endif /* NODE_HPP_ */

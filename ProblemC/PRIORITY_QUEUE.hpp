@@ -1,18 +1,11 @@
-/*
- * PriorityQueue.h
- *
- *  Created on: Mar 19, 2017
- *      Author: patrick
- */
-
-#ifndef PATHFINDER_PRIORITYQUEUE_H_
-#define PATHFINDER_PRIORITYQUEUE_H_
+#ifndef PRIORITY_QUEUE_HPP_
+#define PRIORITY8QUEUE_HPP_
 
 #include <queue>
 #include <utility>
 
 template <typename T, typename priority_t>
-class PriorityQueue
+class PRIORITY_QUEUE
 {
 	//################################################
 
@@ -38,12 +31,22 @@ class PriorityQueue
 	// -- INITIALIZATION
 
   public:
-	PriorityQueue()
+	PRIORITY_QUEUE()
 	{
 	}
 
-	virtual ~PriorityQueue()
+	virtual ~PRIORITY_QUEUE()
 	{
+	}
+
+	//################################################
+
+	// -- INQUIRIES
+
+
+	bool IsEmpty() const
+	{
+		return ElementsQueue.empty();
 	}
 
 	//################################################
@@ -51,11 +54,6 @@ class PriorityQueue
 	// -- OPERATIONS
 
   public:
-	bool Empty() const
-	{
-		return ElementsQueue.empty();
-	}
-
 	void Push(T item, priority_t priority)
 	{
 		ElementsQueue.emplace(priority, item);
@@ -71,4 +69,4 @@ class PriorityQueue
 	}
 };
 
-#endif /* PATHFINDER_PRIORITYQUEUE_H_ */
+#endif /* PRIORITY_QUEUE_HPP_ */

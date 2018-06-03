@@ -5,9 +5,10 @@
  *      Author: patrick
  */
 
+#include <chrono>
 #include <iostream>
-#include "pathfinder/Pathfinder.h"
-#include<chrono>
+
+#include "PATHFINDER.hpp"
 
 void RunTest(const int nStartX, const int nStartY, const int nTargetX, const int nTargetY, const unsigned char* pMap,
 		const int nMapWidth, const int nMapHeight, const int nOutBufferSize, const int expectedAnswer = 0)

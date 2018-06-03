@@ -78,7 +78,6 @@ int main(int argc, char const *argv[])
 
     if (row_total != column_total)
     {
-        //std::cout << "First Check - row_total=" << row_total << " - column_total=" << column_total << std::endl;
         std::cout << "No" << std::endl;
 
         return 0;
@@ -95,7 +94,6 @@ int main(int argc, char const *argv[])
 
         if (k > column_sums_vector.size())
         {
-            //std::cout << "AAAA" << std::endl;
             std::cout << "No" << std::endl;
 
             return 0;
@@ -110,7 +108,6 @@ int main(int argc, char const *argv[])
         {
             if (column_sums_vector[index] < 1)
             {
-                //std::cout << "BBBB" << std::endl;
                 std::cout << "No" << std::endl;
 
                 return 0;
@@ -122,17 +119,6 @@ int main(int argc, char const *argv[])
             column_sums_vector[index]--;
         }
     }
-
-    // for (std::vector<int>::iterator iterator = column_sums_vector.begin(); iterator != column_sums_vector.end(); iterator++)
-    // {
-    //     if (*iterator != 0)
-    //     {
-    //         //std::cout << "CCCC" << std::endl;
-    //         std::cout << "No" << std::endl;
-
-    //         return 0;
-    //     }
-    // }
 
     //************************************************
 
