@@ -22,11 +22,6 @@ int ComputeIndex(const int posX, const int posY, const int mapWidth)
 	return posX + posY * mapWidth;
 }
 
-/*int ComputeRemainingCost(const int x1, const int y1, const int x2, const int y2)
- {
- return std::abs(x2 - x1) + std::abs(y2 - y1);
- }*/
-
 int ComputeRemainingCost(const int index1, const int index2, const int mapWidth)
 {
 	return std::abs(index2 / mapWidth - index1 / mapWidth) + std::abs(index2 % mapWidth - index1 % mapWidth);
